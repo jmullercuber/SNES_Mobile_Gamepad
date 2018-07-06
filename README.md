@@ -18,4 +18,4 @@ Execution should be fairly simple:
 
 On server/computer being controlled, open a terminal and type
 
-`sudo python3 main.py`
+`sudo python3 webhook.py`
