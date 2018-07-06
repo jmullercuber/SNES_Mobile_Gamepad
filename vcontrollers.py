@@ -48,6 +48,12 @@ class Controller(uinput.Device):
         time.sleep(length)
         self.release_button(btn)
 
+    def combo(self, btns):
+        for b,v in btns.items():
+            if b in self.valid_btns:
+                self.emit(self.btn_map[b], int(v), syn=False)
+        self.syn()
+
 #
 class SNESController(Controller):
     # override class variable to count number of instances
