@@ -1,0 +1,17 @@
+.back Button {
+    background-color: #aaaaaa;
+}
+
+.arrow Button {
+    background-color: #555555;
+    color: white;
+}
+
+.menu Button {
+    background-color: #888888;
+    color: white;
+}
+
+.action Button {
+    color: white;
+}

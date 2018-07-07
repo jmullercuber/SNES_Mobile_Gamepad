@@ -1,0 +1,44 @@
+<Page loaded="pageLoaded" class="page" xmlns="http://www.nativescript.org/tns.xsd">
+	<GridLayout rows="*" height="1500px" xmlns:nsDrawer="nativescript-ui-sidedrawer">
+		<nsDrawer:RadSideDrawer id="sideDrawer" rows="0">
+			<nsDrawer:RadSideDrawer.drawerContent>
+				<StackLayout backgroundColor="gray">
+					<StackLayout height="56" style="text-align: center; vertical-align: center;">
+						<Label text="Navigation Menu" />
+					</StackLayout>
+					<StackLayout>
+						<Label text="Primary" padding="10" backgroundColor="lightgray" />
+						<Label text="Settings" padding="10" />
+					</StackLayout>
+					<Label text="Close" color="lightgray" padding="10" style="horizontal-align: center" tap="{{ onCloseDrawerTap }}" />
+				</StackLayout>
+			</nsDrawer:RadSideDrawer.drawerContent>
+			<nsDrawer:RadSideDrawer.mainContent>
+				<StackLayout orientation="vertical" backgroundColor="lightgray">
+					<DockLayout height="60" backgroundColor="lightgray" stretchLastChild="false" class="back">
+						<Button text="tleft" dock="left" width="100" touch="{{ onButtonTouch_TL }}" />
+						<Button text="tright" dock="right" width="100" touch="{{ onButtonTouch_TR }}" />
+					</DockLayout>
+					<DockLayout width="100%" height="90%" backgroundColor="lightgray" stretchLastChild="false">
+						<GridLayout dock="left" width="40%" columns="2*, 1*, 2*" rows="2*, 1*, 2*" class="arrow">
+							<Button text="UP" row="0" col="1" touch="{{ onButtonTouch_UP }}" />
+							<Button text="DOWN" row="2" col="1" touch="{{ onButtonTouch_DOWN }}" />
+							<Button text="LEFT" row="1" col="0" touch="{{ onButtonTouch_LEFT }}" />
+							<Button text="RIGHT" row="1" col="2" touch="{{ onButtonTouch_RIGHT }}" />
+						</GridLayout>
+						<DockLayout dock="right" width="35%" height="80%" class="action" stretchLastChild="false">
+							<Button text="Y" dock="left" width="70" height="70" backgroundColor="green" touch="{{ onButtonTouch_Y }}" />
+							<Button text="X" dock="top" width="70" height="70" backgroundColor="blue" touch="{{ onButtonTouch_X }}" />
+							<Button text="A" dock="right" width="70" height="70" backgroundColor="red" touch="{{ onButtonTouch_A }}" />
+							<Button text="B" dock="bottom" width="70" height="70" backgroundColor="yellow" color="black" touch="{{ onButtonTouch_B }}" />
+						</DockLayout>
+						<StackLayout orientation="vertical" dock="bottom" height="50%" class="menu">
+							<Button text="SELECT" touch="{{ onButtonTouch_SELECT }}" />
+							<Button text="START" touch="{{ onButtonTouch_START }}" />
+						</StackLayout>
+					</DockLayout>
+				</StackLayout>
+			</nsDrawer:RadSideDrawer.mainContent>
+		</nsDrawer:RadSideDrawer>
+	</GridLayout>
+</Page>
