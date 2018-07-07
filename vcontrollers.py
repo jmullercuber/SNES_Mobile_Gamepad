@@ -61,14 +61,14 @@ class SNESController(Controller):
     n = 0
 
     # mapping from button names to uinput event values
-    # A,B,X,Y, L,R, START,SELECT, UP,DOWN,LEFT,RIGHT
+    # A,B,X,Y, TL,TR, START,SELECT, UP,DOWN,LEFT,RIGHT
     btn_map = {
         'A':    uinput.BTN_A,
         'B':    uinput.BTN_B,
         'X':    uinput.BTN_X,
         'Y':    uinput.BTN_Y,
-        'L':    uinput.BTN_TL,
-        'R':    uinput.BTN_TR,
+        'TL':    uinput.BTN_TL,
+        'TR':    uinput.BTN_TR,
         'START':    uinput.BTN_START,
         'SELECT':   uinput.BTN_SELECT,
         'UP':       uinput.BTN_DPAD_UP,
