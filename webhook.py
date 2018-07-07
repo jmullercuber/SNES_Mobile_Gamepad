@@ -23,7 +23,7 @@ def temp_token():
     temp_token = binascii.hexlify(os.urandom(24))
     return temp_token.decode('utf-8')
 
-WEBHOOK_VERIFY_TOKEN = os.getenv('WEBHOOK_VERIFY_TOKEN')
+WEBHOOK_VERIFY_TOKEN = '59a589d6aa1bb31e9da886adffb6fbbff1fb6322f52f5a61' #os.getenv('WEBHOOK_VERIFY_TOKEN')
 CLIENT_AUTH_TIMEOUT = 24 # in Hours
 
 app = Flask(__name__)
@@ -51,7 +51,7 @@ def webhook():
                 authorised_clients.pop(client)
                 return jsonify({'status':'authorisation timeout'}), 401
             else:
-                # valid client sent something. Print it
+                # valid client sent something. Handle it
                 return handle_post(request.json)
         else:
             return jsonify({'status':'not authorised'}), 401
@@ -73,7 +73,7 @@ if __name__ == '__main__':
     for i in active_controllers.keys():
         print(i)
 
-    app.run()
+    app.run(host= '0.0.0.0')
     print('done runnin\'')
     # clean up when done
     c.destroy()

@@ -16,6 +16,10 @@ Use your phone as a virtual SNES-style gamepad
 ## Running
 Execution should be fairly simple:
 
+Once, make the runner script executable
+
+`chmod a+x run.sh`
+
 On server/computer being controlled, open a terminal and type
 
-`sudo python3 webhook.py`
+`sudo ./run.sh`
